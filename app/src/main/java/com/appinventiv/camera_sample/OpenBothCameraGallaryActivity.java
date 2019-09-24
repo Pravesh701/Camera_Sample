@@ -25,6 +25,10 @@ public class OpenBothCameraGallaryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_open_both_camera_gallary);
 
         imageView = findViewById(R.id.img_openabothcameragallary_show_pics);
+        
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
+        builder.detectFileUriExposure();
 
         Glide.with(this).load(R.drawable.ic_launcher_background).circleCrop().placeholder(R.drawable.ic_launcher_background).into(imageView);
 
